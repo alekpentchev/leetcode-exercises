@@ -1,5 +1,5 @@
-export const romanToInt = function(s) {
-    const translations = {
+export const romanToInt = function(s: string): number {
+    const translations: Record<string, number> = {
         'I': 1,
         'V': 5,
         'X': 10,
@@ -14,9 +14,9 @@ export const romanToInt = function(s) {
     // iterating from right to left for easies subtraction
     // we need to focus on the subtraction and that's why right-left dir is easier
     for (let i=letters.length; i--; i>-1) {
-        let current = letters[i]
-        let previous = letters[i+1]
-        
+        const current: string = letters[i]
+        const previous: string = letters[i+1]
+
         if (result === 0) {
             result += translations[current]
             continue;
